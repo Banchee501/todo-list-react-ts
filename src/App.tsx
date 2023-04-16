@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 import { Header } from './components/header/Header';
+import { TodoPanel } from './components/todoPanel/TodoPanel'
 
 const DEFAULT_TODO_LIST = [
   { id: 1, name: 'task 1', description: 'description 1', checked: false },
@@ -21,6 +22,7 @@ function App() {
       <header className="App-header">
         <Header todoCount={todos.length} />
       </header>
+      <TodoPanel />
     </div>
   );
 }
