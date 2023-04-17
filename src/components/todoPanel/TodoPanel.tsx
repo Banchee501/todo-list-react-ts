@@ -1,6 +1,8 @@
 import { useState } from "react";
 
-import './TodoPanel'
+import { Button } from '../button/Button';
+
+import './TodoPanel.scss';
 
 const DEFAULT_TODO = {
     name: '',
@@ -16,9 +18,9 @@ export const TodoPanel = () => {
     }
 
     return (
-        <div className="">
-            <div>
-                <div>
+        <div className="todo_panel_container">
+            <div className="fields_container">
+                <div className="field_container">
                     <label htmlFor="name">
                         <div>name</div>
                         <input type="text"
@@ -28,7 +30,7 @@ export const TodoPanel = () => {
                             onChange={onChange} />
                     </label>
                 </div>
-                <div>
+                <div className="field_container">
                     <label htmlFor="description">
                         <div>description</div>
                         <input type="text"
@@ -38,9 +40,9 @@ export const TodoPanel = () => {
                             onChange={onChange} />
                     </label>
                 </div>
-                <div>
-                    <button>ADD</button>
-                </div>
+            </div>
+            <div className="button_container">
+                <Button color="blue">ADD</Button>
             </div>
         </div>
     )

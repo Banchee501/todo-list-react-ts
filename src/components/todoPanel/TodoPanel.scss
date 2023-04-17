@@ -1,34 +1,35 @@
-.todo_panel {
-    &_container {
-        background-color: #fff;
-        box-shadow: 0px 8px 11px -8px rgba($color: 34, 60, 80, $alpha: 0.9);
-        margin-bottom: 15px;
-        width: 100%;
-        padding: 25px 20px;
-        border-radius: 5px;
-    }
-    .field {
-        &_container {
-            display: flex;
-            justify-content: space-between;
-            gap: 10px;
-            width: 100%;
-            label {
-                display: flex;
-                flex-direction: column;
-                gap: 5px;
-                font-style: 15px;
+.todo_panel_container {
+    background-color: #fff;
+    box-shadow: 0px 8px 11px -8px rgba(34, 60, 80, 0.9);
+    margin-bottom: 15px;
+    width: 100%;
+    padding: 25px 20px;
+    border-radius: 5px;
+    .fields_container {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        .field {
+            &_container {
+                width: 100%;
+                label {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 5px;
+                    font-size: 15px;
+                }
+                input {
+                    font-size: 15px;
+                    padding: 10px 5px;
+                    border-radius: 2px;
+                    border: 0.5px solid black;
+                }
             }
-            input {
-                font-style: 15px;
-                padding: 10px 5px;
-                background-repeat: 2px;
-                border: 0.5px solid black;
+            .button_container {
+                width: 100%;
+                text-align: right;
+                margin-top: 10px;
+            }
         }
-    }
-    .button_container {
-        width: 100%;
-        text-align: right;
-        margin-top: 10px;
     }
 }
