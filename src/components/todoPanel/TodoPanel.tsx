@@ -2,6 +2,8 @@ import { useState } from "react";
 
 import { Button } from '../button/Button';
 
+import { Todo } from '../../../index';
+
 import './TodoPanel.scss';
 
 const DEFAULT_TODO = {
@@ -9,7 +11,11 @@ const DEFAULT_TODO = {
     description: '',
 };
 
-export const TodoPanel = () => {
+interface TodoPanelProps {
+    addTodo: ({ name, description }: Omit<Todo, 'checked' | 'id'>) => void;
+}
+
+export const TodoPanel: React.FC<TodoPanelProps> = ({ addTodo }) => {
     const [todo, setTodo] = useState(DEFAULT_TODO);
 
     const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -42,7 +48,11 @@ export const TodoPanel = () => {
                 </div>
             </div>
             <div className="button_container">
-                <Button color="blue">ADD</Button>
+                <Button
+                    color="blue"
+                    onClick={() => addTodo({ name: todo.name, description: todo.description })}>
+                    ADD
+                </Button>
             </div>
         </div>
     )

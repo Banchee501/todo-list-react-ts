@@ -1,7 +1,9 @@
 import { useState } from 'react';
 
 import { Header } from './components/header/Header';
-import { TodoPanel } from './components/todoPanel/TodoPanel'
+import { TodoPanel } from './components/todoPanel/TodoPanel';
+
+import { Todo } from '../index'
 
 const DEFAULT_TODO_LIST = [
   { id: 1, name: 'task 1', description: 'description 1', checked: false },
@@ -16,13 +18,17 @@ const DEFAULT_TODO_LIST = [
 
 function App() {
   const [todos, setTodos] = useState(DEFAULT_TODO_LIST);
-  console.log(todos, setTodos)
+
+  const addTodo = ({ name, description }: Omit<Todo, 'checked' | 'id'>) => {
+    setTodos([...todos, { id: todos[todos.length - 1].id + 1, description, name, checked: false }]);
+  };
+
   return (
     <div className="App">
       <header className="App-header">
         <Header todoCount={todos.length} />
       </header>
-      <TodoPanel />
+      <TodoPanel addTodo={addTodo} />
     </div>
   );
 }
