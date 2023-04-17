@@ -4,6 +4,7 @@ import { Header } from './components/header/Header';
 import { TodoPanel } from './components/todoPanel/TodoPanel';
 
 import { Todo } from '../index'
+import { TodoList } from './components/todoList/TodoList';
 
 const DEFAULT_TODO_LIST = [
   { id: 1, name: 'task 1', description: 'description 1', checked: false },
@@ -29,6 +30,7 @@ function App() {
         <Header todoCount={todos.length} />
       </header>
       <TodoPanel addTodo={addTodo} />
+      <TodoList todos={todos} />
     </div>
   );
 }
