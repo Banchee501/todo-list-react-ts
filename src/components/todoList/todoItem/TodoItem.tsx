@@ -24,7 +24,7 @@ export const TodoItem: React.FC<TodoItemProps> = ({ todo, checkTodo, deleteTodo,
                 {todo.name}
             </div>
             <div aria-hidden className="todo_item_description">
-                {todo.name}
+                {todo.description}
             </div>
         </div>
         <div className="todo_item_button_container">
