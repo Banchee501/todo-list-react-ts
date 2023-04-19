@@ -24,13 +24,28 @@ function App() {
     setTodos([...todos, { id: todos[todos.length - 1].id + 1, description, name, checked: false }]);
   };
 
+  const checkTodo = (id: Todo['id']) => {
+    setTodos(todos.map(todo => {
+      if (todo.id === id) {
+        return {
+          ...todo, checked: !todo.checked
+        };
+      }
+      return todo;
+    }))
+  }
+
+  const deleteTodo = (id: Todo['id']) => {
+    setTodos(todos.filter((todo) => todo.id !== id))
+  }
+
   return (
     <div className="App">
       <header className="App-header">
         <Header todoCount={todos.length} />
       </header>
       <TodoPanel addTodo={addTodo} />
-      <TodoList todos={todos} />
+      <TodoList todos={todos} checkTodo={checkTodo} deleteTodo={deleteTodo} />
     </div>
   );
 }
