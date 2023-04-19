@@ -19,6 +19,11 @@ const DEFAULT_TODO_LIST = [
 
 function App() {
   const [todos, setTodos] = useState(DEFAULT_TODO_LIST);
+  const [todoIdForEdit, setTodoIdForEdit] = useState<Todo['id'] | null>(null);
+
+  const selectTodoIdForEdit = (id: Todo['id']) => {
+    setTodoIdForEdit(id);
+  }
 
   const addTodo = ({ name, description }: Omit<Todo, 'checked' | 'id'>) => {
     setTodos([...todos, { id: todos[todos.length - 1].id + 1, description, name, checked: false }]);
@@ -45,7 +50,12 @@ function App() {
         <Header todoCount={todos.length} />
       </header>
       <TodoPanel addTodo={addTodo} />
-      <TodoList todos={todos} checkTodo={checkTodo} deleteTodo={deleteTodo} />
+      <TodoList
+        todoIdForEdit={todoIdForEdit}
+        todos={todos}
+        checkTodo={checkTodo}
+        deleteTodo={deleteTodo}
+        selectTodoIdForEdit={selectTodoIdForEdit} />
     </div>
   );
 }
