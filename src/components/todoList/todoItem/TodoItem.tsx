@@ -14,7 +14,7 @@ export const TodoItem: React.FC<TodoItemProps> = ({ todo, checkTodo, deleteTodo,
 
     return <div className="todo_item_container">
         <div>
-            <div aaria-hidden
+            <div aria-hidden
                 style={{
                     opacity: todo.checked ? 0.5 : 1,
                     textDecoration: todo.checked ? 'line-through' : "none"
