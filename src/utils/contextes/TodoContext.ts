@@ -2,7 +2,7 @@ import { createContext } from 'react';
 
 import { Todo } from "../../..";
 
-export interface TodoContextProps {
+interface TodoContextProps {
     todos: Todo[];
     todoIdForEdit: Todo['id'] | null;
     addTodo: ({ name, description }: Omit<Todo, 'checked' | 'id'>) => void;
@@ -13,11 +13,11 @@ export interface TodoContextProps {
 }
 
 export const TodoContext = createContext<TodoContextProps>({
-    todos: [],
     todoIdForEdit: null,
-    addTodo: () => { },
+    todos: [],
     deleteTodo: () => { },
-    checkTodo: () => { },
     changeTodo: () => { },
-    selectTodoIdForEdit: () => { }
-})
+    addTodo: () => { },
+    selectTodoIdForEdit: () => { },
+    checkTodo: () => { },
+});
