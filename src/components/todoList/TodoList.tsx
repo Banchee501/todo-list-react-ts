@@ -6,7 +6,7 @@ export const TodoList: React.FC = () => {
     const { todos, todoIdForEdit, checkTodo, deleteTodo, selectTodoIdForEdit } = UseTodo();
 
     return (
-        <div>
+        <>
             {todos.map((todo) => {
                 if (todo.id === todoIdForEdit)
                     return (<TodoPanel
@@ -23,6 +23,6 @@ export const TodoList: React.FC = () => {
                         selectTodoIdForEdit={selectTodoIdForEdit} />
                 );
             })}
-        </div>
+        </>
     )
 }

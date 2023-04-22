@@ -20,6 +20,9 @@ export const TodoProvider: React.FC<TodoProviderProps> = ({ children }) => {
     }, []);
 
     const addTodo = useCallback(({ name, description }: Omit<Todo, 'checked' | 'id'>) => {
+        if (!name.trim() || !description.trim()) {
+            return;
+        }
         const newTodo = { id: todos.length + 1, name, description, checked: false };
         setTodos([...todos, newTodo]);
         axios.post('http://localhost:3000/add', newTodo);
@@ -44,6 +47,9 @@ export const TodoProvider: React.FC<TodoProviderProps> = ({ children }) => {
     }, [todos]);
 
     const changeTodo = useCallback(({ name, description }: Omit<Todo, 'checked' | 'id'>) => {
+        if (!name.trim() || !description.trim()) {
+            return;
+        }
         const updatedTodos = todos.map(todo => {
             if (todo.id === todoIdForEdit) {
                 return {

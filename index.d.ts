@@ -1,5 +1,5 @@
 export type Todo = {
-    id: number | undefined;
+    id: number;
     name: string;
     description: string;
     checked: boolean;

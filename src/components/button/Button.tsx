@@ -7,7 +7,9 @@ interface ButtonProps extends React.ComponentPropsWithRef<'button'> {
 export const Button: React.FC<ButtonProps> = ({ children, color, onClick, ...props }) => {
     const className = `button ${[`button_${color}`]}`;
 
-    return <button className={className} onClick={onClick} {...props}>
-        {children}
-    </button>
+    return (
+        <button className={className} onClick={onClick} {...props}>
+            {children}
+        </button>
+    )
 }
