@@ -1,10 +1,12 @@
 .todo_item {
     &_container {
-        background-color: #fff;
+        background-color: #ffffff;
         margin-bottom: 15px;
-        width: 1000px;
+        width: 80%;
         padding: 25px 20px;
         border-radius: 5px;
+        margin-left: auto;
+        margin-right: auto;
     }
     &_title {
         font-size: 25px;

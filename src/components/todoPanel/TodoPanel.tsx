@@ -49,7 +49,7 @@ export const TodoPanel: React.FC<TodoPanelProps> = (props) => {
             <div className="fields_container">
                 <div className="field_container">
                     <label htmlFor="name">
-                        <div>name</div>
+                        <div className="name">Name</div>
                         <input type="text"
                             id="name"
                             value={todo.name}
@@ -59,7 +59,7 @@ export const TodoPanel: React.FC<TodoPanelProps> = (props) => {
                 </div>
                 <div className="field_container">
                     <label htmlFor="description">
-                        <div>description</div>
+                        <div className="description">Description</div>
                         <input type="text"
                             id="description"
                             value={todo.description}

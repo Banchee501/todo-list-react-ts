@@ -24,7 +24,7 @@ export const TodoProvider: React.FC<TodoProviderProps> = ({ children }) => {
             return;
         }
         const newTodo = { id: todos.length + 1, name, description, checked: false };
-        setTodos([...todos, newTodo]);
+        setTodos([newTodo, ...todos]);
         axios.post('http://localhost:3000/add', newTodo);
     }, [todos]);
 
