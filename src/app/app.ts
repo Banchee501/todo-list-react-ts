@@ -1,7 +1,7 @@
 import express, { Express } from "express";
 import mongoose from "mongoose";
 import cors from "cors";
-import todoRoutes from "./routes";
+import todoRoutes from "../routes";
 
 const app: Express = express();
 
@@ -13,12 +13,12 @@ app.use(todoRoutes);
 const uri: string = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@clustertodo.raz9g.mongodb.net/${process.env.MONGO_DB}?retryWrites=true&w=majority`;
 
 mongoose
-  .connect(uri, {})
-  .then(() =>
-    app.listen(PORT, () =>
-      console.log(`Server running on http://localhost:${PORT}`)
+    .connect(uri, {})
+    .then(() =>
+        app.listen(PORT, () =>
+            console.log(`Server running on http://localhost:${PORT}`)
+        )
     )
-  )
-  .catch(error => {
-    throw error;
-});
+    .catch(error => {
+        throw error;
+    });
