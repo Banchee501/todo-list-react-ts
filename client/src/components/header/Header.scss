@@ -1,0 +1,15 @@
+@import '../../styles/variables.scss';
+
+.header {
+    &_container {
+        text-align: left;
+        margin-bottom: 20px;
+    }
+    &_title {
+        font-size: 25px;
+        color: #fff;
+        font-family: 'Roboto';
+        font-weight: 700;
+    }
+}
+    
